@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="HYPE Trends">
+	<meta name="author" content="REFRAME S.A.">
+	<!-- <link rel="icon" href="../../favicon.ico"> -->
+	<title>HYPE Trends</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Hype Trends</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<% if user_signed_in? %>
+					<!-- Si esta autenticado mostramos el menu -->
+					<ul class="nav navbar-nav navbar-right">
+						<li><%= link_to 'Edit user', edit_user_registration_path, :class => 'navbar-link' %></li>
+						<li><%= link_to 'Edit profile', edit_profile_path(:id => current_user.id), :class => 'navbar-link' %></li>
+						<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+					</ul>
+				<% else %>
+					<ul class="nav navbar-nav navbar-right">
+						<li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+						<!-- <li><%#= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li> -->
+					</ul>
+					<!-- Si no esta autenticado mostramos el formulario de ingreso -->
+					<%= form_for("user", :html => {:class => "navbar-form navbar-right"}, url: user_session_path) do |f| %>
+					<div class="form-group">
+						<%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
+					</div>
+					<div class="form-group">
+						<%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
+					</div>
+					<%= f.submit "Sign in", :class => "btn btn-success" %>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="container" style="text-align: -webkit-left;">
+		<%= yield %>
+	</div>
+	<div class="footer">
+		<div class="container">
+			<p class="text-muted" style="text-align: -webkit-left;"><a href="http://www.reframe.cl" target="_blank">Reframe S.A.</a></p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<h2> Por favor crea tu perfil </h2>
+<%#= form_for(@profile) do |f| %>
+<%= form_for @profile, url: profiles_path do |f| %>
+	<div>
+		<%= f.label :name %><br />
+		<%= f.text_field :name, :placeholder => "Nombre"%>
+	</div>
+	<div>
+		<%= f.label :lastname %><br />
+		<%= f.text_field :lastname, :placeholder => "Apellido"%>
+	</div>
+	<div>
+		<%= f.label :nickname %><br />
+		<%= f.text_field :nickname, :placeholder => "Nickname"%>
+	</div>
+	<div>
+		<%= f.label :twitter_profile %><br />
+		<%= f.text_field :twitter_profile, :placeholder => "Perfil Twitter"%>
+	</div>
+	<div>
+		<%= f.label :facebook_profile %><br />
+		<%= f.text_field :facebook_profile, :placeholder => "Perfil Facebook"%>
+	</div>
+	<div>
+		<%= f.label :instagram_profile %><br />
+		<%= f.text_field :instagram_profile, :placeholder => "Perfil Instagram"%>
+	</div>
+	<br />
+	<%= submit_tag "Guardar" %>
+<% end %>

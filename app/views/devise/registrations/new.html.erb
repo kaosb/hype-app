@@ -1,0 +1,26 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <%
+  @kinds = []
+  @kinds << { :name => "Influenciador", :value => "i" }
+  @kinds << { :name => "Marca", :value => "b" }
+  %>
+  <div><%= f.label :kind %><br />
+  <%= f.select :kind, @kinds.map {|r| [r[:name], r[:value]] }, :selected => params[:kind] %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>

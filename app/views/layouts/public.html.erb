@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="HYPE Trends">
+	<meta name="author" content="REFRAME S.A.">
+	<!-- <link rel="icon" href="../../favicon.ico"> -->
+	<title>HYPE Trends</title>
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<%= stylesheet_link_tag    'public' %>
+	<%= javascript_include_tag 'public' %>
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+	<!--[if lt IE 9]><script src="https://raw.githubusercontent.com/twbs/bootstrap/master/docs/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<script src="https://raw.githubusercontent.com/twbs/bootstrap/master/docs/assets/js/ie-emulation-modes-warning.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://raw.githubusercontent.com/twbs/bootstrap/master/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="site-wrapper">
+		<div class="site-wrapper-inner">
+			<div class="cover-container">
+				<div class="masthead clearfix">
+					<div class="inner">
+						<ul class="nav masthead-nav">
+							<li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+						</ul>
+					</div>
+				</div>
+				<div class="inner cover">
+						<%= image_tag("hype.jpg", :alt => "Hype Trends") %>
+						<br/>
+						<br/>
+						<br/>
+						<a href="/users/sign_up?kind=i" class="btn btn-lg btn-default">Influenciador</a>
+						<a href="/users/sign_up?kind=b" class="btn btn-lg btn-default">Marca</a>
+				</div>
+				<div class="mastfoot">
+					<div class="inner">
+						<p>Desarrollado por <a href="http://reframe.cl">Reframe S.A.</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
