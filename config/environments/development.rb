@@ -1,6 +1,4 @@
 Rails.application.configure do
-  
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -18,6 +16,20 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+
+  # default url for mailer in development
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # smtp settings for mailer in development environment
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mandrillapp.com",
+    port: 587,
+    domain: "hype.reframe.cl",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "felipe.gonzalez.g@gmail.com",
+    password: "2IiGn42olFFJoK8MU26IKg"
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
