@@ -54,6 +54,9 @@ test:
   encoding: utf8
   database: hype_test
   pool: 5
+  # username: root
+  # password: kaosbite
+  # socket: /tmp/mysql.sock
   username: hypetrends
   password: jWmNMqRAMUDKWxAn
   socket: /var/run/mysqld/mysqld.sock
@@ -63,6 +66,9 @@ production:
   encoding: utf8
   database: hype_production
   pool: 5
+  # username: root
+  # password: kaosbite
+  # socket: /tmp/mysql.sock
   username: hypetrends
   password: jWmNMqRAMUDKWxAn
   socket: /var/run/mysqld/mysqld.sock
