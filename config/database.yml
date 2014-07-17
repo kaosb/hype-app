@@ -39,12 +39,12 @@ development:
   encoding: utf8
   database: hype_development
   pool: 5
-  username: root
-  password: kaosbite
-  #username: hypetrends
-  #password: jWmNMqRAMUDKWxAn
-  socket: /tmp/mysql.sock
-  # /var/run/mysqld/mysqld.sock
+  # username: root
+  # password: kaosbite
+  # socket: /tmp/mysql.sock
+  username: hypetrends
+  password: jWmNMqRAMUDKWxAn
+  socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
