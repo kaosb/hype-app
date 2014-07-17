@@ -18,7 +18,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # default url for mailer in development
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'hype.reframe.cl', port: 80 }
 
   # smtp settings for mailer in development environment
   config.action_mailer.smtp_settings = {
