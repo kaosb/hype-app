@@ -39,8 +39,8 @@ development:
   encoding: utf8
   database: hype_development
   pool: 5
-  username: root
-  password: kaosbite
+  username: hypetrends
+  password: jWmNMqRAMUDKWxAn
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -51,8 +51,8 @@ test:
   encoding: utf8
   database: hype_test
   pool: 5
-  username: root
-  password: kaosbite
+  username: hypetrends
+  password: jWmNMqRAMUDKWxAn
   socket: /tmp/mysql.sock
 
 production:
@@ -60,6 +60,6 @@ production:
   encoding: utf8
   database: hype_production
   pool: 5
-  username: root
-  password: kaosbite
+  username: hypetrends
+  password: jWmNMqRAMUDKWxAn
   socket: /tmp/mysql.sock
